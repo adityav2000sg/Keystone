@@ -1,0 +1,34 @@
+# Cursor Rules — Keystone v1
+
+## Read-first context
+1. Always read `AGENTS.md` first (current phase, constraints, roadmap).
+2. Load detail only when needed from:
+   - `agent_docs/product_requirements.md`
+   - `agent_docs/tech_stack.md`
+   - `agent_docs/project_brief.md`
+   - `agent_docs/code_patterns.md`
+   - `agent_docs/testing.md`
+
+## Operating mode (required)
+### Plan → Execute → Verify
+- **Plan**: briefly outline approach, files touched, risks, and a test plan.
+- **Execute**: implement one small slice at a time.
+- **Verify**: run relevant checks (typecheck/lint/tests). Fix failures before continuing.
+
+## Keystone non-negotiables (must enforce)
+- **No auto-send**: never implement a send-email/message capability.
+- **Least-priv Google scopes** with **incremental auth** for Gmail Draft creation only.
+- **PII-safe observability**: never log raw subject/body or calendar content.
+- **Receipts-first**: summaries/drafts must be grounded to evidence IDs; unknown if unsupported.
+- **Real deletion**: delete-my-data must delete tokens/data/derived artifacts and prevent future sync.
+
+## Engineering constraints
+- `any` is forbidden; use `unknown` + type guards.
+- Validate external inputs with Zod at boundaries (HTTP/webhooks/jobs).
+- No DB access from route handlers; business logic in services; DB access in db layer.
+- Avoid new dependencies unless necessary; check `package.json` first.
+
+## When stuck
+- Ask **one** targeted question (don’t ask a questionnaire).
+- Prefer the simplest correct MVP implementation aligned with the current phase.
+

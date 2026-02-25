@@ -1,0 +1,15 @@
+{
+  "name": "keystone",
+  "private": true,
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api dev",
+    "dev:worker": "pnpm --filter worker dev"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
