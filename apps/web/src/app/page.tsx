@@ -41,7 +41,7 @@ const painSignals = [
 ];
 
 const features = [
-  { title: 'Daily Command Center', body: 'A single surface for today's priorities, meetings, open loops, and follow-through.',                              icon: Layers3     },
+  { title: 'Daily Command Center', body: 'A single surface for today\'s priorities, meetings, open loops, and follow-through.',                              icon: Layers3     },
   { title: 'Inbox Triage',         body: 'Convert recency-driven inbox chaos into ranked actions and cleaner execution paths.',                              icon: Mail        },
   { title: 'Meeting Briefing',     body: 'Arrive prepared with context, history, stakeholders, decisions, and risk signals.',                               icon: CalendarDays},
   { title: 'Follow-up Tracking',   body: 'Keep promises visible after the meeting ends so important threads do not die quietly.',                           icon: Clock3      },
